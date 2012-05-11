@@ -37,3 +37,7 @@ DEFAULT_CATEGORY = 'uncategorized'
 #CATEGORY_URL = 'category/{name}/'
 #CATEGORY_SAVE_AS = 'category/{name}/index.html'
 
+#THEME = 'simple'
+
+DISQUS_SITENAME = "digitalambulation"
+GOOGLE_ANALYTICS = "UA-12964289-1"
