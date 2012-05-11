@@ -26,12 +26,14 @@ DEFAULT_PAGINATION = 10
 
 ARTICLE_DIR = 'articles'
 PAGE_DIR = 'pages'
+STATIC_PATHS = ['images', 'downloads']
 
 # This scheme matches my old Wordpress setup
 DEFAULT_CATEGORY = 'uncategorized'
-ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
-ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
-TAG_URL = 'tag/{name}/'
-TAG_SAVE_AS = 'tag/{name}/index.html'
-CATEGORY_URL = 'category/{name}/'
-CATEGORY_SAVE_AS = 'category/{name}/index.html'
+#ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
+#ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
+#TAG_URL = 'tag/{name}/'
+#TAG_SAVE_AS = 'tag/{name}/index.html'
+#CATEGORY_URL = 'category/{name}/'
+#CATEGORY_SAVE_AS = 'category/{name}/index.html'
+

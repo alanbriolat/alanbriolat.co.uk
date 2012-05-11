@@ -2,7 +2,8 @@ Using Nautilus in Xubuntu 11.10
 ===============================
 
 :date: 2012-01-09
-:tags: linux, ubuntu, xubuntu
+:category: linux
+:tags: ubuntu, xubuntu, xfce, nautilus
 :slug: using-nautilus-in-xubuntu-11-10
 
 Like many people, I've found the new things in the Linux desktop environment world - i.e. GNOME 3 
