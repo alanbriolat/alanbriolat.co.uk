@@ -2,75 +2,107 @@
 
 @import "mixins.less";
 
-@bg: #fff;
-@fg: #000;
-@sidebar-bg: #555;
-@sidebar-fg: #fff;
+/* Colour palette from http://www.colourlovers.com/palette/482774/dream_magnet */
+@palette1: #343838;
+@palette2: #005F6B;
+@palette3: #008C9E;
+@palette4: #00B4CC;
+@palette5: #00DFFC;
 
-@sidebarWidth: 250px;
-@contentWidth: 800px;
+@bodyBackground: @palette1;
+@bodyForeground: #fff;
+
+@contentBackground: #fff;
+@contentForeground: #000;
+
 @containerPadding: 20px;
+@smallPadding: 5px;
+@sidebarWidth: 250px;
+@maxContentWidth: 800px;
+
+@linkColor: @palette3;
+@linkHover: @palette5;
+
 
 @import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
 
 /* Basic styles */
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: @bg;
-    text-color: @fg;
+    padding: 0 @containerPadding;
+    padding-left: @sidebarWidth;
+    margin: 0 0;
+    max-width: @maxContentWidth;
+    background-color: @bodyBackground;
+    color: @bodyForeground;
     font-family: Gudea, sans-serif;
-    font-size: 16px;
+    /*font-size: 16px;*/
+}
+
+a {
+    color: @linkColor;
+    text-decoration: underline;
+
+    &:hover {
+        color: @linkHover;
+        text-decoration: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: Comfortaa, sans-serif;
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 
 
 /* Two-column page layout */
 
-body {
-    max-width: @contentWidth;
-    padding-left: @sidebarWidth;
-}
-
-#container-content {
-    padding: 0 @containerPadding;
-}
-
 #container-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
     width: @sidebarWidth;
+    float: left;
+    margin-left: -@sidebarWidth;
+}
+
+#inner-sidebar {
+    padding: @containerPadding;
     text-align: right;
 }
 
-#sidebar {
-    padding: 0 @containerPadding;
+#container-content {
+    padding: @containerPadding;
+    background-color: @contentBackground;
+    color: @contentForeground;
+    border: 3px solid @palette4;
+    border-top: none;
 }
 
 
-/* One-column hacks */
+/* Specific styles */
 
-@media (max-width:767px) {
-    body {
-        max-width: none;
-        padding-left: 0;
-    }
+nav#menu ul {
+    list-style: none;
+    li {
+        margin-top: @smallPadding;
+        a {
+            padding-right: @smallPadding;
+            border-right: 3px solid;
+        }
 
-    #container-sidebar {
-        position: absolute;
-        height: auto;
-        width: auto;
-        text-align: left;
+        &.active a {
+            color: @linkHover;
+            text-decoration: none;
+        }
     }
 }
 
-#container-sidebar {
-    background-color: @sidebar-bg;
-    text-color: @sidebar-fg;
+body > footer {
+    padding: @smallPadding;
+    font-size: small;
+    text-align: center;
+    address {
+        font-style: normal;
+    }
 }
