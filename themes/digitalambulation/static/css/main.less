@@ -7,85 +7,70 @@
 @sidebar-bg: #555;
 @sidebar-fg: #fff;
 
+@sidebarWidth: 250px;
+@contentWidth: 800px;
+@containerPadding: 20px;
+
 @import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
+
+/* Basic styles */
 
 body {
     padding: 0;
     margin: 0;
+    background-color: @bg;
+    text-color: @fg;
+    font-family: Gudea, sans-serif;
+    font-size: 16px;
 }
 
-.two-column(@sidebar-width, @content-width, @padding) {
-    body {
-        padding-left: @sidebar-width;
-    }
-
-    #container-content {
-        padding-left: @padding;
-        padding-right: @padding;
-        width: @content-width - (2 * @padding);
-    }
-
-    #container-sidebar {
-        padding-left: @padding;
-        padding-right: @padding;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        padding-left: @padding;
-        padding-right: @padding;
-        width: @sidebar-width - (2 * @padding);
-        text-align: right;
-        border-right: 1px solid #ccc;
-        border-bottom: none;
-    }
+h1, h2, h3, h4, h5, h6 {
+    font-family: Comfortaa, sans-serif;
 }
 
-.one-column(@padding) {
+
+/* Two-column page layout */
+
+body {
+    max-width: @contentWidth;
+    padding-left: @sidebarWidth;
+}
+
+#container-content {
+    padding: 0 @containerPadding;
+}
+
+#container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: @sidebarWidth;
+    text-align: right;
+}
+
+#sidebar {
+    padding: 0 @containerPadding;
+}
+
+
+/* One-column hacks */
+
+@media (max-width:767px) {
     body {
+        max-width: none;
         padding-left: 0;
     }
 
-    #container-content {
-        padding-left: @padding;
-        padding-right: @padding;
-    }
-
     #container-sidebar {
-        padding-left: @padding;
-        padding-right: @padding;
-        position: relative;
-        top: 0;
-        left: 0;
+        position: absolute;
         height: auto;
         width: auto;
         text-align: left;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
     }
-}
-
-.two-column(400px, 700px, 30px);
-
-@media screen and (max-width:1280px) {
-    .two-column(250px, 600px, 20px);
-}
-
-@media screen and (max-width:960px) {
-    .one-column(15px);
-}
-
-body {
-    font-family: Gudea, sans-serif;
-    background-color: @bg;
-    text-color: @fg;
 }
 
 #container-sidebar {
     background-color: @sidebar-bg;
     text-color: @sidebar-fg;
-}
-
-h1, h2, h3, h4 {
-    font-family: Comfortaa, sans-serif;
 }
