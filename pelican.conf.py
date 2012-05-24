@@ -41,3 +41,5 @@ DEFAULT_CATEGORY = 'uncategorized'
 
 DISQUS_SITENAME = "digitalambulation"
 GOOGLE_ANALYTICS = "UA-12964289-1"
+
+LESS_GENERATOR = 'node_modules/less/bin/lessc'

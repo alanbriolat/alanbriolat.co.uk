@@ -1,0 +1,91 @@
+/*@import "html5-doctor-reset-stylesheet.css";*/
+
+@import "mixins.less";
+
+@bg: #fff;
+@fg: #000;
+@sidebar-bg: #555;
+@sidebar-fg: #fff;
+
+@import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.two-column(@sidebar-width, @content-width, @padding) {
+    body {
+        padding-left: @sidebar-width;
+    }
+
+    #container-content {
+        padding-left: @padding;
+        padding-right: @padding;
+        width: @content-width - (2 * @padding);
+    }
+
+    #container-sidebar {
+        padding-left: @padding;
+        padding-right: @padding;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding-left: @padding;
+        padding-right: @padding;
+        width: @sidebar-width - (2 * @padding);
+        text-align: right;
+        border-right: 1px solid #ccc;
+        border-bottom: none;
+    }
+}
+
+.one-column(@padding) {
+    body {
+        padding-left: 0;
+    }
+
+    #container-content {
+        padding-left: @padding;
+        padding-right: @padding;
+    }
+
+    #container-sidebar {
+        padding-left: @padding;
+        padding-right: @padding;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: auto;
+        text-align: left;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.two-column(400px, 700px, 30px);
+
+@media screen and (max-width:1280px) {
+    .two-column(250px, 600px, 20px);
+}
+
+@media screen and (max-width:960px) {
+    .one-column(15px);
+}
+
+body {
+    font-family: Gudea, sans-serif;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+#container-sidebar {
+    background-color: @sidebar-bg;
+    text-color: @sidebar-fg;
+}
+
+h1, h2, h3, h4 {
+    font-family: Comfortaa, sans-serif;
+}
