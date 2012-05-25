@@ -6,6 +6,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+        <link href="{{ FEED_DOMAIN }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
         {% endblock head %}
     </head>
 
@@ -47,5 +54,20 @@
             which takes great advantage of <a href="http://python.org">Python</a>.
         </address><!-- /#about -->
         </footer><!-- /#contentinfo -->
+
+        {% if DISQUS_SITENAME %}
+        <script type="text/javascript">
+            var disqus_shortname = '{{ DISQUS_SITENAME }}';
+            {% if DISQUS_DEVELOPER %}
+            var disqus_developer = 1;
+            {% endif %}
+            (function () {
+                 var s = document.createElement('script'); s.async = true;
+                 s.type = 'text/javascript';
+                 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+                 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+             }());
+        </script>
+        {% endif %}
     </body>
 </html>

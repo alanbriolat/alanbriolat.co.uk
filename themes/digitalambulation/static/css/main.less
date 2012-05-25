@@ -3,6 +3,7 @@
 @import "mixins.less";
 
 @import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Comfortaa:700');
+@import url('http://fonts.googleapis.com/css?family=Mate:400,400italic');
 @import "pygments.css";
 
 /* Colour palette from http://www.colourlovers.com/palette/482774/dream_magnet */
@@ -32,7 +33,7 @@
 @baseFontFamily: 'Maven Pro', sans-serif;
 @headingFontFamily: 'Comfortaa', sans-serif;
 @monoFontFamily: monospace, monospace;
-@serifFontFamily: Georgia, serif;
+@serifFontFamily: 'Mate', serif;
 
 @containerPadding: 20px;
 @smallPadding: 5px;
@@ -152,6 +153,10 @@ address {
     color: @contentForeground;
     border: 3px solid @borderColor;
     border-top: none;
+
+    footer {
+        color: lighten(@contentForeground, 30%);
+    }
 }
 
 nav#menu ul {
@@ -237,4 +242,8 @@ div.note {
     .admonition-title {
         font-weight: bold;
     }
+}
+
+article {
+    margin-bottom: @baseLineHeight;
 }
