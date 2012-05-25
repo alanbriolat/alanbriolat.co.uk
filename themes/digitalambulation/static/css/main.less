@@ -23,6 +23,9 @@
 
 @borderColor: @palette4;
 
+@literalBackground: lighten(@borderColor, 58%);
+@admonitionBackground: lighten(@bodyBackground, 65%);
+
 @baseFontSize: 13px;
 @baseLineHeight: 18px;
 
@@ -72,12 +75,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-h1 { font-size: 30px; line-height: @baseLineHeight * 2; }
-h2 { font-size: 24px; line-height: @baseLineHeight * 2; }
-h3 { font-size: 18px; line-height: @baseLineHeight * 1.5; }
-h4 { font-size: 14px; line-height: @baseLineHeight; }
-h5 { font-size: 12px; line-height: @baseLineHeight; }
-h6 { font-size: 11px; line-height: @baseLineHeight; font-variant: small-caps; }
+h1 { font-size: 230%; line-height: @baseLineHeight * 2; }
+h2 { font-size: 185%; line-height: @baseLineHeight * 2; }
+h3 { font-size: 140%; line-height: @baseLineHeight * 1.5; }
+h4 { font-size: 110%; line-height: @baseLineHeight; }
+h5 { font-size: 110%; line-height: @baseLineHeight; font-family: @baseFontFamily; }
+h6 { font-size: 85%; line-height: @baseLineHeight; font-family: @baseFontFamily; text-transform: uppercase; }
 
 p, blockquote {
     margin: 0 0 @baseLineHeight / 2;
@@ -103,7 +106,28 @@ pre {
     line-height: @baseLineHeight;
     border-top: 1px solid @borderColor;
     border-bottom: 1px solid @borderColor;
-    background-color: lighten(@borderColor, 58%);
+    background-color: @literalBackground;
+}
+
+tt {
+    background-color: @literalBackground;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0 0 @baseLineHeight / 2 25px;
+}
+
+footer {
+    display: block;
+    margin: 0 0 @baseLineHeight / 2;
+    font-size: 90%;
+}
+
+address {
+    display: inline;
+    font-style: normal;
+    line-height: @baseLineHeight;
 }
 
 
@@ -164,9 +188,8 @@ nav#menu ul {
     }
 
     nav#menu ul {
-        display: inline;
-        margin: 0;
-        padding: 0;
+        display: inline-block;
+        margin-left: 0;
 
         li {
             display: inline;
@@ -192,9 +215,24 @@ nav#menu ul {
 
 body > footer {
     padding: @smallPadding;
-    font-size: small;
     text-align: center;
-    address {
-        font-style: normal;
+}
+
+ol#post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* reStructuredText admonitions */
+
+div.admonition,
+div.caution,
+div.note {
+    padding: @containerPadding/2 @containerPadding;
+    margin: 0 0 @baseLineHeight / 2;
+    background-color: @admonitionBackground;
+    .admonition-title {
+        font-weight: bold;
     }
 }
