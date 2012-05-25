@@ -2,7 +2,7 @@
 
 @import "mixins.less";
 
-@import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
+@import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Comfortaa:700');
 @import "pygments.css";
 
 /* Colour palette from http://www.colourlovers.com/palette/482774/dream_magnet */
@@ -29,8 +29,8 @@
 @baseFontSize: 13px;
 @baseLineHeight: 18px;
 
-@baseFontFamily: Gudea, sans-serif;
-@headingFontFamily: Comfortaa, sans-serif;
+@baseFontFamily: 'Maven Pro', sans-serif;
+@headingFontFamily: 'Comfortaa', sans-serif;
 @monoFontFamily: monospace, monospace;
 @serifFontFamily: Georgia, serif;
 
@@ -110,6 +110,8 @@ pre {
 }
 
 tt {
+    font-family: @monoFontFamily;
+    font-size: @baseFontSize;
     background-color: @literalBackground;
 }
 
