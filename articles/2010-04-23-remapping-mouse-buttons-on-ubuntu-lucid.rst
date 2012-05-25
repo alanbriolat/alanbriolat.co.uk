@@ -18,7 +18,7 @@ configuration fragment at ``/usr/lib/X11/xorg.conf.d/20-logitech-mx1100.conf``::
             Option "ButtonMapping" "1 2 3 4 5 6 7 2 9 10" 
     EndSection
 
-As with the previous method, ``>xinput list`` should give you the product string to use for 
+As with the previous method, ``xinput list`` should give you the product string to use for 
 ``MatchProduct``.
 
 .. note::
