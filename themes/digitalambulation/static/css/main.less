@@ -2,6 +2,7 @@
 
 @import "mixins.less";
 
+@import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
 @import "pygments.css";
 
 /* Colour palette from http://www.colourlovers.com/palette/482774/dream_magnet */
@@ -17,16 +18,24 @@
 @contentBackground: #fff;
 @contentForeground: #000;
 
+@linkColor: @palette3;
+@linkHover: @palette5;
+
+@borderColor: @palette4;
+
+@baseFontSize: 13px;
+@baseLineHeight: 18px;
+
+@baseFontFamily: Gudea, sans-serif;
+@headingFontFamily: Comfortaa, sans-serif;
+@monoFontFamily: monospace, monospace;
+@serifFontFamily: Georgia, serif;
+
 @containerPadding: 20px;
 @smallPadding: 5px;
 @sidebarWidth: 250px;
 @maxContentWidth: 800px;
 
-@linkColor: @palette3;
-@linkHover: @palette5;
-
-
-@import url('http://fonts.googleapis.com/css?family=Gudea|Comfortaa');
 
 /* Basic styles */
 
@@ -37,8 +46,9 @@ body {
     max-width: @maxContentWidth;
     background-color: @bodyBackground;
     color: @bodyForeground;
-    font-family: Gudea, sans-serif;
-    /*font-size: 16px;*/
+    font-family: @baseFontFamily;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
 }
 
 a {
@@ -52,11 +62,48 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Comfortaa, sans-serif;
+    margin: 0;
+    font-family: @headingFontFamily;
+
+    /* Don't make links stand out when they're in headings */
     a {
         color: inherit;
         text-decoration: inherit;
     }
+}
+
+h1 { font-size: 30px; line-height: @baseLineHeight * 2; }
+h2 { font-size: 24px; line-height: @baseLineHeight * 2; }
+h3 { font-size: 18px; line-height: @baseLineHeight * 1.5; }
+h4 { font-size: 14px; line-height: @baseLineHeight; }
+h5 { font-size: 12px; line-height: @baseLineHeight; }
+h6 { font-size: 11px; line-height: @baseLineHeight; font-variant: small-caps; }
+
+p, blockquote {
+    margin: 0 0 @baseLineHeight / 2;
+    font-family: @baseFontFamily;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    text-align: justify;
+}
+
+blockquote {
+    padding: 0 @containerPadding;
+    border-left: 1px solid @borderColor;
+
+    p {
+        font-family: @serifFontFamily;
+    }
+}
+
+pre {
+    margin: 0 0 @baseLineHeight / 2;
+    font-family: @monoFontFamily;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    background-color: lighten(@borderColor, 58%);
 }
 
 
@@ -77,17 +124,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: @containerPadding;
     background-color: @contentBackground;
     color: @contentForeground;
-    border: 3px solid @palette4;
+    border: 3px solid @borderColor;
     border-top: none;
 }
 
-
-/* Specific styles */
-
 nav#menu ul {
     list-style: none;
+    line-height: @baseLineHeight * 1.5;
     li {
-        margin-top: @smallPadding;
         a {
             padding-right: @smallPadding;
             border-right: 3px solid;
@@ -99,6 +143,52 @@ nav#menu ul {
         }
     }
 }
+
+
+/* One-column layout optimised for phones */
+
+@media (max-width: 767px) {
+    body {
+        padding: 0 0;
+        margin: 0 0;
+    }
+
+    #container-sidebar {
+        float: none;
+        width: auto;
+        margin-left: 0;
+    }
+
+    #inner-sidebar {
+        padding: @containerPadding / 2;
+    }
+
+    nav#menu ul {
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            margin-left: @baseLineHeight;
+
+            a {
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+    }
+
+    #container-content {
+        padding: @containerPadding / 2;
+        border: 3px solid @borderColor;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+
+/* Specific styles */
 
 body > footer {
     padding: @smallPadding;

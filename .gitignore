@@ -1,2 +1,3 @@
 output/
 virtualenv/
+node_modules/
