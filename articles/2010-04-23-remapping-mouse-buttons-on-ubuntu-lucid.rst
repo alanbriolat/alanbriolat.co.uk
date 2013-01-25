@@ -5,11 +5,12 @@ Remapping Mouse Buttons on Ubuntu Lucid
 :category: linux
 :tags: ubuntu, xorg
 
-For ergonomic reasons `(discussed previously) <../mouse-button-remapping-with-hal.html>`_ I like a 
-side button on my mouse to act as a middle button instead.  Unfortunately there still doesn't seem 
-to be an "easy" way to remap mouse buttons in Linux, and what's more the method of changing such 
-settings seems to keep changing.  To achieve the same results in Ubuntu Lucid, I added an Xorg 
-configuration fragment at ``/usr/lib/X11/xorg.conf.d/20-logitech-mx1100.conf``::
+For ergonomic reasons `(discussed previously) 
+<|filename|/articles/2009-06-13-mouse-button-remapping-with-hal.rst>`_ I like a side button on my 
+mouse to act as a middle button instead.  Unfortunately there still doesn't seem to be an "easy" way 
+to remap mouse buttons in Linux, and what's more the method of changing such settings seems to keep 
+changing.  To achieve the same results in Ubuntu Lucid, I added an Xorg configuration fragment at 
+``/usr/lib/X11/xorg.conf.d/20-logitech-mx1100.conf``::
 
     Section "InputClass" 
             Identifier "Logitech MX1100 button remap" 

@@ -51,7 +51,7 @@ only the following well-justified extensions:
 * Foxmarks - because I want my bookmarks on at least 3 different machines
 * QuickRestart - no real effect on performance, and sometimes you want to restart Firefox quickly!
 
-.. image:: images/ff-layout.png
+.. image:: |filename|/images/ff-layout.png
     :alt: Condensed Firefox layout
     :width: 100%
 

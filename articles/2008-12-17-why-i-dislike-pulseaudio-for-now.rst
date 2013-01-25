@@ -21,7 +21,8 @@ no more problems and everything works perfectly until the next time I log in.
 I'm currently trialling Fedora 10 on my desktop, so I'll update this post if I have any more luck 
 there.  Feel free to correct me in the comments if I'm just being stupid or missing something!
 
-**Update:** `I've since fixed this problem. <../mpd-pulseaudio-ubuntu-intrepid-8-10.html>`_.
+**Update:** `I've since fixed this problem  
+<|filename|/articles/2009-03-21-mpd-pulseaudio-ubuntu-intrepid-8-10.rst>`_.
 
 .. _PulseAudio: http://pulseaudio.org/
 .. _major: http://ubuntu.com/

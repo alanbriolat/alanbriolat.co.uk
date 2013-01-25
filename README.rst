@@ -7,14 +7,9 @@ and build this damned thing.
 
 ::
 
-    virtualenv virtualenv
+    virtualenv2 virtualenv
     source virtualenv/bin/activate
-    git submodule init
-    git submodule update
-    pushd pelican
-    python setup.py develop
-    popd
-    npm install less
-    pelican -s pelican.conf.py -v --theme=themes/digitalambulation/
+    pip install -r requirements.txt
+    pelican -s pelican.conf.py -v
     cd output/
     python -m SimpleHTTPServer 8000

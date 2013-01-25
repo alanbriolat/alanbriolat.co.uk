@@ -21,18 +21,18 @@ latest versions of the top 5 browsers running in it).  The CSS I used was along 
 One thing that became apparent is that IE7 has absolutely no idea how to render this.  The correct 
 rendering (as produced by Firefox 3 and all the other browsers) is this:
 
-.. image:: images/button-background-image-ff3.png
+.. image:: |filename|/images/button-background-image-ff3.png
     :align: center
 
 IE7's take on rendering this looked more like this:
 
-.. image:: images/button-background-image-ie7.png
+.. image:: |filename|/images/button-background-image-ie7.png
     :align: center
 
 After a bit more experimentation, I came up with the following illustration which roughly shows what 
 is happening:
 
-.. image:: images/IE7-button-rendering.png
+.. image:: |filename|/images/IE7-button-rendering.png
     :align: center
 
 The nice thing is that this is fixed in the upcoming IE8, so I've taken the stress-free approach; 

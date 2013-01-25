@@ -3,11 +3,13 @@
 
 AUTHOR = u"Alan Briolat"
 SITENAME = u"Digital Ambulation"
-SITEURL = ''
+SITEURL = u'http://alanbriolat.co.uk'
 
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG='en'
+
+PLUGINS = ['pelican.plugins.assets']
 
 # Blogroll
 LINKS =  (
@@ -37,9 +39,10 @@ DEFAULT_CATEGORY = 'uncategorized'
 #CATEGORY_URL = 'category/{name}/'
 #CATEGORY_SAVE_AS = 'category/{name}/index.html'
 
-#THEME = 'simple'
+THEME = 'themes/digitalambulation'
+THEME_STATIC_PATHS = ['static']
+
+FEED_DOMAIN = SITEURL
 
 DISQUS_SITENAME = "digitalambulation"
 GOOGLE_ANALYTICS = "UA-12964289-1"
-
-LESS_GENERATOR = 'node_modules/less/bin/lessc'

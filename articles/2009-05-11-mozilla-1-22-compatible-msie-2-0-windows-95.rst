@@ -7,7 +7,7 @@ Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)
 
 Browsing the visitor stats today, I found this little gem:
 
-.. image:: images/ancient-browser1.png
+.. image:: |filename|/images/ancient-browser1.png
     :align: center
 
 "Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)"?  Who uses such a browser?  My bet is on it being 

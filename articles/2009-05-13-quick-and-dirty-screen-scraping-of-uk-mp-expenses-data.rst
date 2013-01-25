@@ -20,8 +20,8 @@ __ http://news.bbc.co.uk/1/hi/uk_politics/8044207.stm
 The end result is the following Python script which scrapes the data from the BBC News page and 
 saves it in both CSV and JSON formats
 
-* `mp-expenses-extract.py <downloads/mp-expenses-extract.py>`_
-* `mp-expenses.csv <downloads/mp-expenses.csv>`_
-* `mp-expenses.json <downloads/mp-expenses.json>`_
+* `mp-expenses-extract.py <|filename|/downloads/mp-expenses-extract.py>`_
+* `mp-expenses.csv <|filename|/downloads/mp-expenses.csv>`_
+* `mp-expenses.json <|filename|/downloads/mp-expenses.json>`_
 
 .. _BeautifulSoup: http://www.crummy.com/software/BeautifulSoup/
