@@ -38,6 +38,7 @@ DEFAULT_CATEGORY = 'uncategorized'
 #TAG_SAVE_AS = 'tag/{name}/index.html'
 #CATEGORY_URL = 'category/{name}/'
 #CATEGORY_SAVE_AS = 'category/{name}/index.html'
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.+)'
 
 THEME = 'themes/digitalambulation'
 THEME_STATIC_PATHS = ['static']
