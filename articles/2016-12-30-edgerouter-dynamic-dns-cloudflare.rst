@@ -1,6 +1,14 @@
 EdgeRouter + Dynamic DNS + Cloudflare
 =====================================
 
+.. note::
+
+    This no longer works. The version of ``ddclient`` in EdgeOS uses the CloudFlare v1 API, which 
+    was `deprecated November 2016 
+    <https://blog.cloudflare.com/sunsetting-api-v1-in-favor-of-cloudflares-current-client-api-api-v4/>`_ 
+    and finally retired June 2018. I now use `cloudflare-ddns 
+    <https://github.com/ethaligan/cloudflare-ddns>`_ running on a server inside my network.
+
 My home network sits on a fast internet connection behind an Ubiquiti Networks `EdgeRouter X`_ but
 doesn't have the benefit of a static IP address.  I've been meaning to set up a dynamic DNS entry
 for it for a while, but really wanted to make use of the fact I already manage my DNS with
